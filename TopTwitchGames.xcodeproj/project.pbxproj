@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,7 @@
 		C59129E6247F94F200DE7233 /* TopGamesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E5247F94F200DE7233 /* TopGamesConfigurator.swift */; };
 		C59129E8247F975600DE7233 /* TopGamesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E7247F975600DE7233 /* TopGamesPresenter.swift */; };
 		C59129EA247F97A300DE7233 /* TopGamesViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E9247F97A300DE7233 /* TopGamesViewRouter.swift */; };
+		C59129ED247FA18C00DE7233 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129EC247FA18C00DE7233 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		C59129E5247F94F200DE7233 /* TopGamesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesConfigurator.swift; sourceTree = "<group>"; };
 		C59129E7247F975600DE7233 /* TopGamesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesPresenter.swift; sourceTree = "<group>"; };
 		C59129E9247F97A300DE7233 /* TopGamesViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesViewRouter.swift; sourceTree = "<group>"; };
+		C59129EC247FA18C00DE7233 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		CEDA4CB66F2CAE883AE33B83 /* Pods-TopTwitchGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopTwitchGames.release.xcconfig"; path = "Target Support Files/Pods-TopTwitchGames/Pods-TopTwitchGames.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		C591299D247F778500DE7233 /* TopTwitchGames */ = {
 			isa = PBXGroup;
 			children = (
+				C59129EB247FA17600DE7233 /* Extensions */,
 				C59129E1247F934A00DE7233 /* Modules */,
 				C59129C1247F8AC400DE7233 /* Network */,
 				C59129B6247F887800DE7233 /* Entities */,
@@ -223,13 +226,20 @@
 			path = TopGamesList;
 			sourceTree = "<group>";
 		};
+		C59129EB247FA17600DE7233 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C59129EC247FA18C00DE7233 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D751E2674E021D559E4351A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				3DC1B21A0AA398D40D88B65D /* Pods-TopTwitchGames.debug.xcconfig */,
 				CEDA4CB66F2CAE883AE33B83 /* Pods-TopTwitchGames.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,6 +376,7 @@
 				C59129EA247F97A300DE7233 /* TopGamesViewRouter.swift in Sources */,
 				C59129B3247F785E00DE7233 /* TopGamesTableViewController.swift in Sources */,
 				C59129E6247F94F200DE7233 /* TopGamesConfigurator.swift in Sources */,
+				C59129ED247FA18C00DE7233 /* UIViewController+Alert.swift in Sources */,
 				C59129E8247F975600DE7233 /* TopGamesPresenter.swift in Sources */,
 				C59129BE247F8A5100DE7233 /* Box.swift in Sources */,
 				C59129D6247F8E7400DE7233 /* URLSessionProvider.swift in Sources */,

@@ -11,6 +11,5 @@ import Foundation
 enum API
 {
 	static let token = "sd4grh0omdj9a31exnpikhrmsu3v46"
-	static let endpoint = "https://api.twitch.tv/kraken"
-	static let getTopGames = "/games/top"
+	static let endpoint = "https://api.twitch.tv/kraken/games/top"
 }

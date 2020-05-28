@@ -52,7 +52,7 @@ final class TopGamesPresenter: ITopGamesPresenter
 
 	// MARK: - EventsPresenter
 	func viewDidLoad() {
-		fetchTopGames()
+		self.fetchTopGames()
 	}
 
 	func configure(cell: GameCellView, forRow row: Int) {
@@ -73,7 +73,7 @@ final class TopGamesPresenter: ITopGamesPresenter
 								service: TwitchService.getTopGames) { [weak self] (response) in
 									guard let self = self else { return }
 									switch response {
-									case let .success(events): self.handleTopGamesReceived(events)
+									case let .success(topGames): self.handleTopGamesReceived(topGames)
 									case let .failure(error): self.handleTopGamesError(error)
 									}
 		}

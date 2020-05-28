@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class GameTableViewCell: UITableViewCell
+class GameTableViewCell: UITableViewCell, GameCellView
 {
 
 	@IBOutlet weak var coverImage: UIImageView!
@@ -18,7 +18,7 @@ class GameTableViewCell: UITableViewCell
 	@IBOutlet weak var viewersNumber: UILabel!
 
 	func display(coverImage url: String) {
-		self.coverImage.sd_setImage(with: URL(string: API.endpoint + url))
+		self.coverImage.sd_setImage(with: URL(string: url))
 	}
 
 	func display(name: String) {

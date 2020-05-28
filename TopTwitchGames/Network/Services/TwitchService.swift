@@ -19,7 +19,7 @@ enum TwitchService: ServiceProtocol
 
 	var path: String {
 		switch self {
-		case .getTopGames: return API.getTopGames
+		case .getTopGames: return API.endpoint
 		case .getImageData(let urlString): return urlString
 		}
 	}
