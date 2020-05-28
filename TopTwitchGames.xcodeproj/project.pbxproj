@@ -19,6 +19,19 @@
 		C59129BC247F8A3500DE7233 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129BB247F8A3500DE7233 /* Game.swift */; };
 		C59129BE247F8A5100DE7233 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129BD247F8A5100DE7233 /* Box.swift */; };
 		C59129C0247F8A6A00DE7233 /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129BF247F8A6A00DE7233 /* Locale.swift */; };
+		C59129C8247F8B3500DE7233 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129C7247F8B3500DE7233 /* API.swift */; };
+		C59129CA247F8C0C00DE7233 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129C9247F8C0C00DE7233 /* HTTPMethod.swift */; };
+		C59129CC247F8C3400DE7233 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129CB247F8C3400DE7233 /* NetworkError.swift */; };
+		C59129CE247F8C9D00DE7233 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129CD247F8C9D00DE7233 /* NetworkResponse.swift */; };
+		C59129D0247F8D1F00DE7233 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129CF247F8D1F00DE7233 /* ParametersEncoding.swift */; };
+		C59129D2247F8D5600DE7233 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129D1247F8D5600DE7233 /* Task.swift */; };
+		C59129D4247F8D9300DE7233 /* TwitchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129D3247F8D9300DE7233 /* TwitchService.swift */; };
+		C59129D6247F8E7400DE7233 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129D5247F8E7400DE7233 /* URLSessionProvider.swift */; };
+		C59129D8247F8EC300DE7233 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129D7247F8EC300DE7233 /* ProviderProtocol.swift */; };
+		C59129DA247F8EE200DE7233 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129D9247F8EE200DE7233 /* ServiceProtocol.swift */; };
+		C59129DC247F8F0A00DE7233 /* Extension+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DB247F8F0A00DE7233 /* Extension+URLSession.swift */; };
+		C59129DE247F8FAC00DE7233 /* Extension+URLComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DD247F8FAC00DE7233 /* Extension+URLComponets.swift */; };
+		C59129E0247F913400DE7233 /* Extension+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DF247F913300DE7233 /* Extension+URLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +49,19 @@
 		C59129BB247F8A3500DE7233 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C59129BD247F8A5100DE7233 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		C59129BF247F8A6A00DE7233 /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
+		C59129C7247F8B3500DE7233 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C59129C9247F8C0C00DE7233 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C59129CB247F8C3400DE7233 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C59129CD247F8C9D00DE7233 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		C59129CF247F8D1F00DE7233 /* ParametersEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		C59129D1247F8D5600DE7233 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C59129D3247F8D9300DE7233 /* TwitchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchService.swift; sourceTree = "<group>"; };
+		C59129D5247F8E7400DE7233 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		C59129D7247F8EC300DE7233 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		C59129D9247F8EE200DE7233 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		C59129DB247F8F0A00DE7233 /* Extension+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLSession.swift"; sourceTree = "<group>"; };
+		C59129DD247F8FAC00DE7233 /* Extension+URLComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLComponets.swift"; sourceTree = "<group>"; };
+		C59129DF247F913300DE7233 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +94,7 @@
 		C591299D247F778500DE7233 /* TopTwitchGames */ = {
 			isa = PBXGroup;
 			children = (
+				C59129C1247F8AC400DE7233 /* Network */,
 				C59129B6247F887800DE7233 /* Entities */,
 				C591299E247F778500DE7233 /* AppDelegate.swift */,
 				C59129A0247F778500DE7233 /* SceneDelegate.swift */,
@@ -91,6 +118,66 @@
 				C59129BF247F8A6A00DE7233 /* Locale.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C59129C1247F8AC400DE7233 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C59129C6247F8B0200DE7233 /* Services */,
+				C59129C5247F8AFA00DE7233 /* Provider */,
+				C59129C4247F8AF000DE7233 /* Protocols */,
+				C59129C3247F8ADD00DE7233 /* Extensions */,
+				C59129C2247F8AD400DE7233 /* Enums */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C59129C2247F8AD400DE7233 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C59129C7247F8B3500DE7233 /* API.swift */,
+				C59129C9247F8C0C00DE7233 /* HTTPMethod.swift */,
+				C59129CB247F8C3400DE7233 /* NetworkError.swift */,
+				C59129CD247F8C9D00DE7233 /* NetworkResponse.swift */,
+				C59129CF247F8D1F00DE7233 /* ParametersEncoding.swift */,
+				C59129D1247F8D5600DE7233 /* Task.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		C59129C3247F8ADD00DE7233 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C59129DD247F8FAC00DE7233 /* Extension+URLComponets.swift */,
+				C59129DF247F913300DE7233 /* Extension+URLRequest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C59129C4247F8AF000DE7233 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C59129D7247F8EC300DE7233 /* ProviderProtocol.swift */,
+				C59129D9247F8EE200DE7233 /* ServiceProtocol.swift */,
+				C59129DB247F8F0A00DE7233 /* Extension+URLSession.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C59129C5247F8AFA00DE7233 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C59129D5247F8E7400DE7233 /* URLSessionProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C59129C6247F8B0200DE7233 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C59129D3247F8D9300DE7233 /* TwitchService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +252,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59129B8247F893C00DE7233 /* TopGames.swift in Sources */,
+				C59129DE247F8FAC00DE7233 /* Extension+URLComponets.swift in Sources */,
 				C59129BA247F898F00DE7233 /* TopGame.swift in Sources */,
+				C59129DA247F8EE200DE7233 /* ServiceProtocol.swift in Sources */,
+				C59129D4247F8D9300DE7233 /* TwitchService.swift in Sources */,
+				C59129E0247F913400DE7233 /* Extension+URLRequest.swift in Sources */,
+				C59129DC247F8F0A00DE7233 /* Extension+URLSession.swift in Sources */,
+				C59129D0247F8D1F00DE7233 /* ParametersEncoding.swift in Sources */,
 				C59129C0247F8A6A00DE7233 /* Locale.swift in Sources */,
+				C59129CA247F8C0C00DE7233 /* HTTPMethod.swift in Sources */,
 				C59129BC247F8A3500DE7233 /* Game.swift in Sources */,
+				C59129C8247F8B3500DE7233 /* API.swift in Sources */,
+				C59129D2247F8D5600DE7233 /* Task.swift in Sources */,
 				C591299F247F778500DE7233 /* AppDelegate.swift in Sources */,
 				C59129B3247F785E00DE7233 /* MainTableViewController.swift in Sources */,
 				C59129BE247F8A5100DE7233 /* Box.swift in Sources */,
+				C59129D6247F8E7400DE7233 /* URLSessionProvider.swift in Sources */,
+				C59129CC247F8C3400DE7233 /* NetworkError.swift in Sources */,
+				C59129D8247F8EC300DE7233 /* ProviderProtocol.swift in Sources */,
 				C59129A1247F778500DE7233 /* SceneDelegate.swift in Sources */,
 				C59129B5247F797900DE7233 /* GameTableViewCell.swift in Sources */,
+				C59129CE247F8C9D00DE7233 /* NetworkResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
