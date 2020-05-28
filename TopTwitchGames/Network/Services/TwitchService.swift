@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum ServiceConstants
+{
+	static let topGamesOffset = 15
+}
+
 enum TwitchService: ServiceProtocol
 {
 	case getTopGames(offset: Int)
@@ -33,7 +38,11 @@ enum TwitchService: ServiceProtocol
 
 	var task: Task {
 		switch self {
-		case .getTopGames: return .requestParameters(["limit" : 51])
+		case .getTopGames(let offset):
+			return .requestParameters([
+				"limit" : ServiceConstants.topGamesOffset,
+				"offset" : "\(offset)"
+			])
 		case .getImageData: return .requestPlain
 		}
 	}

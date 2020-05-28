@@ -11,7 +11,6 @@ import UIKit
 protocol ITopGamesTableViewController: AnyObject
 {
 	func refreshTopGamesView()
-	func reloadCellAt(indexPath: IndexPath)
 	func displayTopGamesRetrievalError(title: String, message: String)
 }
 
@@ -70,13 +69,7 @@ extension TopGamesTableViewController: ITopGamesTableViewController
 			self?.tableView.reloadData()
 		}
 	}
-	
-	func reloadCellAt(indexPath: IndexPath) {
-		DispatchQueue.main.async { [weak self] in
-			self?.tableView.reloadRows(at: [indexPath], with: .fade)
-		}
-	}
-	
+
 	func displayTopGamesRetrievalError(title: String, message: String) {
 		DispatchQueue.main.async { [weak self] in
 			self?.presentAlert(title: title, message: message)

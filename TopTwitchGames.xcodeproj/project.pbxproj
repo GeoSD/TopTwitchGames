@@ -208,6 +208,7 @@
 		C59129E1247F934A00DE7233 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C59129EE248018EE00DE7233 /* SendFeedback */,
 				C59129E2247F935E00DE7233 /* TopGamesList */,
 				C59129E3247F939000DE7233 /* ViewRouter.swift */,
 			);
@@ -232,6 +233,13 @@
 				C59129EC247FA18C00DE7233 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C59129EE248018EE00DE7233 /* SendFeedback */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SendFeedback;
 			sourceTree = "<group>";
 		};
 		D751E2674E021D559E4351A3 /* Pods */ = {

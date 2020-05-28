@@ -25,8 +25,8 @@ final class TopGamesPresenter: ITopGamesPresenter
 	internal let router: TopGamesViewRouter
 
 	private var topGames: [TopGame] = []
-	private var topGamesOffsets: [Int] = []
-	private var topGamesTotal: Int = 0
+	private var currentOffset = 0
+	private var topGamesTotal = 0
 
 	var numberOfTopGames: Int {
 		return self.topGamesTotal
@@ -52,12 +52,8 @@ final class TopGamesPresenter: ITopGamesPresenter
 	}
 
 	func fetchTopGamesIfNeeded(forRow row: Int) {
-		let index = row / 50
-		if self.topGamesOffsets[index] == 0 {
-			let offset = index * 50
-
-			self.topGamesOffsets[index] = 1
-			self.fetchTopGames(offset: offset)
+		if row > self.topGames.count {
+			self.fetchTopGames(offset: self.currentOffset)
 		}
 	}
 
@@ -73,11 +69,8 @@ final class TopGamesPresenter: ITopGamesPresenter
 	}
 
 	private func handleTopGamesReceived(_ topGames: TopGames) {
-		if self.topGamesOffsets.isEmpty {
-			self.topGamesOffsets = Array(repeating: 0, count: topGames.total / 50 + 1)
-			self.topGamesOffsets[0] = 1
-		}
 		self.topGames.append(contentsOf: topGames.topGames)
+		self.currentOffset = self.topGames.count
 		self.topGamesTotal = topGames.total
 		view?.refreshTopGamesView()
 	}
@@ -85,7 +78,12 @@ final class TopGamesPresenter: ITopGamesPresenter
 	private func handleTopGamesError(_ error: NetworkError) {
 		view?.displayTopGamesRetrievalError(
 			title: "Ошибка!",
-			message: "Произошла ошибка при загрузке данных. Проверьте соединение и перезапустите приложение. Сообщение об ошибке: \(error.localizedDescription)"
+			message:
+			"""
+			Произошла ошибка при загрузке данных.
+			Проверьте соединение и перезапустите приложение.
+			Сообщение об ошибке: \(error.localizedDescription)
+			"""
 		)
 	}
 }
