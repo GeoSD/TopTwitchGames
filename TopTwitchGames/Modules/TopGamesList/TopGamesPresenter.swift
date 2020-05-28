@@ -68,7 +68,7 @@ final class TopGamesPresenter: ITopGamesPresenter
 
 	private func fetchTopGames(page: Int) {
 		sessionProvider.request(type: TopGames.self,
-								service: TwitchService.getTopGames(page: page)) { [weak self] (response) in
+								service: TwitchService.getTopGames(offset: page)) { [weak self] (response) in
 									guard let self = self else { return }
 									switch response {
 									case let .success(topGames): self.handleTopGamesReceived(topGames)

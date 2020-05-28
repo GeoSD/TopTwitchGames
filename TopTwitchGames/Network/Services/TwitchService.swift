@@ -10,7 +10,7 @@ import Foundation
 
 enum TwitchService: ServiceProtocol
 {
-	case getTopGames(page: Int)
+	case getTopGames(offset: Int)
 	case getImageData(_ urlString: String)
 
 	var baseURL: URL {
