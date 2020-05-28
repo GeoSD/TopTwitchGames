@@ -12,7 +12,7 @@
 		C59129A6247F778500DE7233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59129A4247F778500DE7233 /* Main.storyboard */; };
 		C59129A8247F778700DE7233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59129A7247F778700DE7233 /* Assets.xcassets */; };
 		C59129AB247F778700DE7233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59129A9247F778700DE7233 /* LaunchScreen.storyboard */; };
-		C59129B3247F785E00DE7233 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129B2247F785E00DE7233 /* MainTableViewController.swift */; };
+		C59129B3247F785E00DE7233 /* TopGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129B2247F785E00DE7233 /* TopGamesTableViewController.swift */; };
 		C59129B5247F797900DE7233 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129B4247F797900DE7233 /* GameTableViewCell.swift */; };
 		C59129B8247F893C00DE7233 /* TopGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129B7247F893C00DE7233 /* TopGames.swift */; };
 		C59129BA247F898F00DE7233 /* TopGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129B9247F898F00DE7233 /* TopGame.swift */; };
@@ -32,6 +32,10 @@
 		C59129DC247F8F0A00DE7233 /* Extension+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DB247F8F0A00DE7233 /* Extension+URLSession.swift */; };
 		C59129DE247F8FAC00DE7233 /* Extension+URLComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DD247F8FAC00DE7233 /* Extension+URLComponets.swift */; };
 		C59129E0247F913400DE7233 /* Extension+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129DF247F913300DE7233 /* Extension+URLRequest.swift */; };
+		C59129E4247F939000DE7233 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E3247F939000DE7233 /* ViewRouter.swift */; };
+		C59129E6247F94F200DE7233 /* TopGamesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E5247F94F200DE7233 /* TopGamesConfigurator.swift */; };
+		C59129E8247F975600DE7233 /* TopGamesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E7247F975600DE7233 /* TopGamesPresenter.swift */; };
+		C59129EA247F97A300DE7233 /* TopGamesViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59129E9247F97A300DE7233 /* TopGamesViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +46,7 @@
 		C59129A7247F778700DE7233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C59129AA247F778700DE7233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C59129AC247F778700DE7233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C59129B2247F785E00DE7233 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		C59129B2247F785E00DE7233 /* TopGamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesTableViewController.swift; sourceTree = "<group>"; };
 		C59129B4247F797900DE7233 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		C59129B7247F893C00DE7233 /* TopGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGames.swift; sourceTree = "<group>"; };
 		C59129B9247F898F00DE7233 /* TopGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGame.swift; sourceTree = "<group>"; };
@@ -62,6 +66,10 @@
 		C59129DB247F8F0A00DE7233 /* Extension+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLSession.swift"; sourceTree = "<group>"; };
 		C59129DD247F8FAC00DE7233 /* Extension+URLComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLComponets.swift"; sourceTree = "<group>"; };
 		C59129DF247F913300DE7233 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
+		C59129E3247F939000DE7233 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		C59129E5247F94F200DE7233 /* TopGamesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesConfigurator.swift; sourceTree = "<group>"; };
+		C59129E7247F975600DE7233 /* TopGamesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesPresenter.swift; sourceTree = "<group>"; };
+		C59129E9247F97A300DE7233 /* TopGamesViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		C591299D247F778500DE7233 /* TopTwitchGames */ = {
 			isa = PBXGroup;
 			children = (
+				C59129E1247F934A00DE7233 /* Modules */,
 				C59129C1247F8AC400DE7233 /* Network */,
 				C59129B6247F887800DE7233 /* Entities */,
 				C591299E247F778500DE7233 /* AppDelegate.swift */,
@@ -102,8 +111,6 @@
 				C59129A7247F778700DE7233 /* Assets.xcassets */,
 				C59129A9247F778700DE7233 /* LaunchScreen.storyboard */,
 				C59129AC247F778700DE7233 /* Info.plist */,
-				C59129B2247F785E00DE7233 /* MainTableViewController.swift */,
-				C59129B4247F797900DE7233 /* GameTableViewCell.swift */,
 			);
 			path = TopTwitchGames;
 			sourceTree = "<group>";
@@ -180,6 +187,27 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C59129E1247F934A00DE7233 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C59129E2247F935E00DE7233 /* TopGamesList */,
+				C59129E3247F939000DE7233 /* ViewRouter.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C59129E2247F935E00DE7233 /* TopGamesList */ = {
+			isa = PBXGroup;
+			children = (
+				C59129B4247F797900DE7233 /* GameTableViewCell.swift */,
+				C59129B2247F785E00DE7233 /* TopGamesTableViewController.swift */,
+				C59129E5247F94F200DE7233 /* TopGamesConfigurator.swift */,
+				C59129E7247F975600DE7233 /* TopGamesPresenter.swift */,
+				C59129E9247F97A300DE7233 /* TopGamesViewRouter.swift */,
+			);
+			path = TopGamesList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +281,7 @@
 			files = (
 				C59129B8247F893C00DE7233 /* TopGames.swift in Sources */,
 				C59129DE247F8FAC00DE7233 /* Extension+URLComponets.swift in Sources */,
+				C59129E4247F939000DE7233 /* ViewRouter.swift in Sources */,
 				C59129BA247F898F00DE7233 /* TopGame.swift in Sources */,
 				C59129DA247F8EE200DE7233 /* ServiceProtocol.swift in Sources */,
 				C59129D4247F8D9300DE7233 /* TwitchService.swift in Sources */,
@@ -265,7 +294,10 @@
 				C59129C8247F8B3500DE7233 /* API.swift in Sources */,
 				C59129D2247F8D5600DE7233 /* Task.swift in Sources */,
 				C591299F247F778500DE7233 /* AppDelegate.swift in Sources */,
-				C59129B3247F785E00DE7233 /* MainTableViewController.swift in Sources */,
+				C59129EA247F97A300DE7233 /* TopGamesViewRouter.swift in Sources */,
+				C59129B3247F785E00DE7233 /* TopGamesTableViewController.swift in Sources */,
+				C59129E6247F94F200DE7233 /* TopGamesConfigurator.swift in Sources */,
+				C59129E8247F975600DE7233 /* TopGamesPresenter.swift in Sources */,
 				C59129BE247F8A5100DE7233 /* Box.swift in Sources */,
 				C59129D6247F8E7400DE7233 /* URLSessionProvider.swift in Sources */,
 				C59129CC247F8C3400DE7233 /* NetworkError.swift in Sources */,

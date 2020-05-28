@@ -1,5 +1,5 @@
 //
-//  MainTableViewController.swift
+//  TopGamesTableViewController.swift
 //  TopTwitchGames
 //
 //  Created by Дягилев Георгий Сергеевич on 28.05.2020.
@@ -8,9 +8,13 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class TopGamesTableViewController: UITableViewController
+{
 
 	@IBOutlet weak var feedBackButton: UIBarButtonItem!
+
+	let configurator = TopGamesConfigurator()
+	var presenter: TopGamesPresenter!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -89,4 +93,16 @@ class MainTableViewController: UITableViewController {
 	}
 	*/
 
+}
+
+extension TopGamesTableViewController: TopGamesView
+{
+	func refreshTopGamesView() {
+	}
+
+	func reloadCellAt(indexPath: IndexPath) {
+	}
+
+	func displayTopGamesRetrievalError(title: String, message: String) {
+	}
 }
