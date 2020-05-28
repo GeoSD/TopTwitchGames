@@ -10,7 +10,7 @@ import Foundation
 
 enum TwitchService: ServiceProtocol
 {
-	case getTopGames
+	case getTopGames(page: Int)
 	case getImageData(_ urlString: String)
 
 	var baseURL: URL {
@@ -19,7 +19,7 @@ enum TwitchService: ServiceProtocol
 
 	var path: String {
 		switch self {
-		case .getTopGames: return API.endpoint
+		case .getTopGames: return API.getTopGames
 		case .getImageData(let urlString): return urlString
 		}
 	}
@@ -33,7 +33,7 @@ enum TwitchService: ServiceProtocol
 
 	var task: Task {
 		switch self {
-		case .getTopGames: return .requestPlain
+		case .getTopGames: return .requestParameters(["limit" : 100])
 		case .getImageData: return .requestPlain
 		}
 	}

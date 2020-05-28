@@ -17,10 +17,10 @@ protocol TopGamesView: AnyObject
 
 protocol GameCellView
 {
-		func display(coverImage url: String)
-		func display(name: String)
-		func display(channelsNumber: String)
-		func display(viewersNumber: String)
+	func display(coverImage url: String)
+	func display(name: String)
+	func display(channelsNumber: String)
+	func display(viewersNumber: String)
 }
 
 protocol ITopGamesPresenter
@@ -50,27 +50,25 @@ final class TopGamesPresenter: ITopGamesPresenter
 		self.router = router
 	}
 
-	// MARK: - EventsPresenter
 	func viewDidLoad() {
-		self.fetchTopGames()
+		self.fetchTopGames(page: 0)
 	}
 
 	func configure(cell: GameCellView, forRow row: Int) {
 		let topGame = topGames[row]
-		cell.display(coverImage: topGame.game.box.medium)
+		cell.display(coverImage: topGame.game.box.large)
 		cell.display(name: topGame.game.name)
 		cell.display(channelsNumber: "\(topGame.channels)")
 		cell.display(viewersNumber: "\(topGame.viewers)")
 	}
 
 	func heightForRowAt(_ row: Int) -> Int {
-		return 200
+		return 100
 	}
 
-	// MARK: - Private
-	private func fetchTopGames() {
-		sessionProvider.request(type: [TopGame].self,
-								service: TwitchService.getTopGames) { [weak self] (response) in
+	private func fetchTopGames(page: Int) {
+		sessionProvider.request(type: TopGames.self,
+								service: TwitchService.getTopGames(page: page)) { [weak self] (response) in
 									guard let self = self else { return }
 									switch response {
 									case let .success(topGames): self.handleTopGamesReceived(topGames)
@@ -79,13 +77,15 @@ final class TopGamesPresenter: ITopGamesPresenter
 		}
 	}
 
-	private func handleTopGamesReceived(_ topGames: [TopGame]) {
-		self.topGames = topGames
+	private func handleTopGamesReceived(_ topGames: TopGames) {
+		self.topGames = topGames.topGames
 		view?.refreshTopGamesView()
 	}
 
 	private func handleTopGamesError(_ error: NetworkError) {
-		view?.displayTopGamesRetrievalError(title: "Ошибка!",
-											message: "Произошла ошибка при загрузке данных. Проверьте соединение и перезапустите приложение. Сообщение об ошибке: \(error)")
+		view?.displayTopGamesRetrievalError(
+			title: "Ошибка!",
+			message: "Произошла ошибка при загрузке данных. Проверьте соединение и перезапустите приложение. Сообщение об ошибке: \(error.localizedDescription)"
+		)
 	}
 }
