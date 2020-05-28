@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol ITopGamesTableViewController: AnyObject
+{
+	func refreshTopGamesView()
+	func reloadCellAt(indexPath: IndexPath)
+	func displayTopGamesRetrievalError(title: String, message: String)
+}
+
 class TopGamesTableViewController: UITableViewController
 {
 	
@@ -23,6 +30,7 @@ class TopGamesTableViewController: UITableViewController
 		presenter.viewDidLoad()
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.prefetchDataSource = self
 		tableView.tableFooterView = UIView()
 	}
 	
@@ -36,9 +44,10 @@ class TopGamesTableViewController: UITableViewController
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell",
-													   for: indexPath) as? GameTableViewCell else {
-														assertionFailure("Cell not casted to custom!")
-														return UITableViewCell()
+													   for: indexPath) as? GameTableViewCell
+			else {
+				assertionFailure("Cell not casted to custom!")
+				return UITableViewCell()
 		}
 		presenter.configure(cell: cell, forRow: indexPath.row)
 		return cell
@@ -54,7 +63,7 @@ class TopGamesTableViewController: UITableViewController
 	}
 }
 
-extension TopGamesTableViewController: TopGamesView
+extension TopGamesTableViewController: ITopGamesTableViewController
 {
 	func refreshTopGamesView() {
 		DispatchQueue.main.async { [weak self] in
@@ -72,5 +81,16 @@ extension TopGamesTableViewController: TopGamesView
 		DispatchQueue.main.async { [weak self] in
 			self?.presentAlert(title: title, message: message)
 		}
+	}
+}
+
+extension TopGamesTableViewController: UITableViewDataSourcePrefetching
+{
+	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		self.presenter.fetchTopGamesIfNeeded(forRow: indexPaths.last!.row)
+	}
+
+	func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+
 	}
 }

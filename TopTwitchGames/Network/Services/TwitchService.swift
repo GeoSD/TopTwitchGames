@@ -33,7 +33,7 @@ enum TwitchService: ServiceProtocol
 
 	var task: Task {
 		switch self {
-		case .getTopGames: return .requestParameters(["limit" : 100])
+		case .getTopGames: return .requestParameters(["limit" : 51])
 		case .getImageData: return .requestPlain
 		}
 	}

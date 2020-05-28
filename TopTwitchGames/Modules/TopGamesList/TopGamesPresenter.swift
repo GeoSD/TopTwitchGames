@@ -8,67 +8,62 @@
 
 import Foundation
 
-protocol TopGamesView: AnyObject
-{
-	func refreshTopGamesView()
-	func reloadCellAt(indexPath: IndexPath)
-	func displayTopGamesRetrievalError(title: String, message: String)
-}
-
-protocol GameCellView
-{
-	func display(coverImage url: String)
-	func display(name: String)
-	func display(channelsNumber: String)
-	func display(viewersNumber: String)
-}
-
 protocol ITopGamesPresenter
 {
 	var numberOfTopGames: Int { get }
 	var router: TopGamesViewRouter { get }
 	func viewDidLoad()
-	func configure(cell: GameCellView, forRow row: Int)
+	func configure(cell: IGameTableViewCell, forRow row: Int)
 	func heightForRowAt(_ row: Int) -> Int
+	func fetchTopGamesIfNeeded(forRow row: Int)
 }
 
 final class TopGamesPresenter: ITopGamesPresenter
 {
-	private weak var view: TopGamesView?
+	private weak var view: ITopGamesTableViewController?
 	private let sessionProvider = URLSessionProvider()
 	internal let router: TopGamesViewRouter
 
 	private var topGames: [TopGame] = []
+	private var topGamesOffsets: [Int] = []
+	private var topGamesTotal: Int = 0
 
 	var numberOfTopGames: Int {
-		return topGames.count
+		return self.topGamesTotal
 	}
 
-	init(view: TopGamesView,
+	init(view: ITopGamesTableViewController,
 		 router: TopGamesViewRouter) {
 		self.view = view
 		self.router = router
 	}
 
 	func viewDidLoad() {
-		self.fetchTopGames(page: 0)
+		self.fetchTopGames(offset: 0)
 	}
 
-	func configure(cell: GameCellView, forRow row: Int) {
+	func configure(cell: IGameTableViewCell, forRow row: Int) {
 		let topGame = topGames[row]
-		cell.display(coverImage: topGame.game.box.large)
-		cell.display(name: topGame.game.name)
-		cell.display(channelsNumber: "\(topGame.channels)")
-		cell.display(viewersNumber: "\(topGame.viewers)")
+		cell.configure(with: topGame)
 	}
 
 	func heightForRowAt(_ row: Int) -> Int {
 		return 100
 	}
 
-	private func fetchTopGames(page: Int) {
+	func fetchTopGamesIfNeeded(forRow row: Int) {
+		let index = row / 50
+		if self.topGamesOffsets[index] == 0 {
+			let offset = index * 50
+
+			self.topGamesOffsets[index] = 1
+			self.fetchTopGames(offset: offset)
+		}
+	}
+
+	private func fetchTopGames(offset: Int) {
 		sessionProvider.request(type: TopGames.self,
-								service: TwitchService.getTopGames(offset: page)) { [weak self] (response) in
+								service: TwitchService.getTopGames(offset: offset)) { [weak self] (response) in
 									guard let self = self else { return }
 									switch response {
 									case let .success(topGames): self.handleTopGamesReceived(topGames)
@@ -78,7 +73,12 @@ final class TopGamesPresenter: ITopGamesPresenter
 	}
 
 	private func handleTopGamesReceived(_ topGames: TopGames) {
-		self.topGames = topGames.topGames
+		if self.topGamesOffsets.isEmpty {
+			self.topGamesOffsets = Array(repeating: 0, count: topGames.total / 50 + 1)
+			self.topGamesOffsets[0] = 1
+		}
+		self.topGames.append(contentsOf: topGames.topGames)
+		self.topGamesTotal = topGames.total
 		view?.refreshTopGamesView()
 	}
 

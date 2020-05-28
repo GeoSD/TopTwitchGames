@@ -9,7 +9,13 @@
 import UIKit
 import SDWebImage
 
-class GameTableViewCell: UITableViewCell, GameCellView
+protocol IGameTableViewCell
+{
+	func configure(with item: TopGame)
+}
+
+
+class GameTableViewCell: UITableViewCell, IGameTableViewCell
 {
 
 	@IBOutlet weak var coverImage: UIImageView!
@@ -17,19 +23,10 @@ class GameTableViewCell: UITableViewCell, GameCellView
 	@IBOutlet weak var channelsNumber: UILabel!
 	@IBOutlet weak var viewersNumber: UILabel!
 
-	func display(coverImage url: String) {
-		self.coverImage.sd_setImage(with: URL(string: url))
-	}
-
-	func display(name: String) {
-		self.nameLabel.text = name
-	}
-
-	func display(channelsNumber: String) {
-		self.channelsNumber.text = channelsNumber
-	}
-
-	func display(viewersNumber: String) {
-		self.viewersNumber.text = viewersNumber
+	func configure(with item: TopGame) {
+		self.coverImage.sd_setImage(with: URL(string: item.game.box.large))
+		self.nameLabel.text = item.game.name
+		self.channelsNumber.text = "\(item.channels)"
+		self.viewersNumber.text = "\(item.viewers)"
 	}
 }
